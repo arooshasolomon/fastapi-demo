@@ -27,6 +27,10 @@ DB = "nem2p"
 def zone_apex():
     return {"Hello": "Hello API", "album_endpoint":"/albums","static_endpoint":"/static"}
 
+@app.post("/")
+def another_zone_apex():
+     return {"Area code": "98", "country": "Iran", "airport": "IAD"}
+
 @app.get("/albums")
 def get_all_albums():
     db = MySQLdb.connect(host=HOST, user=USER, passwd=PASS, db=DB)
@@ -47,9 +51,9 @@ def get_one_album(id):
     
 # Start using the "Item" BaseModel
 # Post / Delete / Patch methods
-# @app.post("/items/{item_id}")
-# def add_item(item_id: int, item: Item):
-#     return {"item_id": item_id, "item_name": item.name}
+#@app.post("/items/{item_id}")
+#def add_item(item_id: int, item: int):
+ #    return {"item_id": item_id, "item_name": item.name}
 
 # @app.delete("/items/{item_id}")
 # def delete_item(item_id: int, item: Item):
@@ -58,3 +62,4 @@ def get_one_album(id):
 # @app.patch("/items/{item_id}")
 # def patch_item(item_id: int, item: Item):
 #     return {"action": "patch", "item_id": item_id}
+
