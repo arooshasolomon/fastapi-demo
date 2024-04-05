@@ -36,9 +36,7 @@ DB = "npj4qa"
 def zone_apex():
     return {"Hello": "Hello API", "album_endpoint":"/albums","static_endpoint":"/static"}
 
-@app.post("/")
-def another_zone_apex():
-     return {"Area code": "98", "country": "Iran", "airport": "IAD"}
+
 
 @app.get("/albums")
 def get_all_albums():
